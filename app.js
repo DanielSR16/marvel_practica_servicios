@@ -16,11 +16,10 @@ var marvel = api.createClient({
 
 app.get('/:number', (req, res) => {
     var number =  req.params.number
-     nombre
     marvel.characters.findAll(1, number)
     .then(function(resul){
         res.send('name: '+resul.data[0].name)
-        nombre = resul.data[0].name
+        
     })
     .fail(console.error)
     .done();
